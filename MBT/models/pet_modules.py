@@ -167,6 +167,6 @@ class AdaptFormer(nn.Module):
 
         # FFN + skip conections
         x = x + self.spec_mlp(self.spec_norm2(x)) + self.forward_audio_AF(self.spec_norm2(x)) * self.spec_scale
-        y = y + self.rgb_mlp(self.rgb_norm2(y)) + self.forward_visual_AF(self.spec_norm2(y)) * self.rgb_scale
+        y = y + self.rgb_mlp(self.rgb_norm2(y)) + self.forward_visual_AF(self.rgb_norm2(y)) * self.rgb_scale
         return x,y
         
